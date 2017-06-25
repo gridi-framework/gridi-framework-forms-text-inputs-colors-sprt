@@ -1,0 +1,11 @@
+$text-inputs-colors-support-parser: (
+    focus-border-color: color,
+    color: color
+);
+
+$text-inputs-colors-support-extra-colors-palette: () !default;
+$text-inputs-colors-support-skip-colors-palette: null !default;
+
+$text-inputs-datalist-colors-support-parser: (
+    border-color: color
+);

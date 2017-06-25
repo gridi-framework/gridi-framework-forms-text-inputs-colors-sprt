@@ -1,0 +1,33 @@
+{
+    "name": "gridi-framework-forms-text-inputs-colors-sprt",
+    "description": "",
+    "main": "",
+    "authors": [
+        "Przemysław Dziadek <przemyslaw.dziadek@gmail.com>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "css",
+        "scss",
+        "gridi",
+        "framework",
+        "colors",
+        "support",
+        "forms",
+        "text",
+        "inputs"
+    ],
+    "homepage": "https://github.com/gridi-framework/gridi-framework-forms-text-inputs-colors-sprt",
+    "ignore": [
+        "**/.*",
+        "**/*.md",
+        "**/*.js",
+        "**/*.json",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "gridi-framework-forms-text-inputs": "*",
+        "gridi-framework-colors": "*"
+    }
+}
