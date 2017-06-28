@@ -1,24 +1,28 @@
 @each $palette-color-prefix, $palette-color-variables in get-colors-palette($text-inputs-colors-support-extra-colors-palette, $text-inputs-colors-support-skip-colors-palette) {
     .#{$colors-class-prefix}-#{$palette-color-prefix} {
         @include text-inputs-style() {
-            color: map_get($palette-color-variables, map_get($text-inputs-colors-support-parser, color));
-
-            &:focus {
-                border-color: map_get($palette-color-variables, map_get($text-inputs-colors-support-parser, focus-border-color));
-            }
+            @include include-text-inputs-colors(parse-map($text-inputs-colors-support-parser, $palette-color-variables));
+            @include include-placeholder-color(parse-map($text-inputs-placeholder-colors-support-parser, $palette-color-variables));
         }
+
+        @include text-inputs-disabled-style() {
+            @include include-text-inputs-colors(parse-map($text-inputs-disabled-colors-support-parser, $palette-color-variables));
+        }
+
+        @include datalist-colors(parse-map($text-inputs-datalist-colors-support-parser, $palette-color-variables));
     }
 
     @include class-text-inputs-style('#{$colors-class-prefix}-#{$palette-color-prefix}') {
-        color: map_get($palette-color-variables, map_get($text-inputs-colors-support-parser, color));
+        @include include-text-inputs-colors(parse-map($text-inputs-colors-support-parser, $palette-color-variables));
+        @include include-placeholder-color(parse-map($text-inputs-placeholder-colors-support-parser, $palette-color-variables));
+    }
 
-        &:focus {
-            border-color: map_get($palette-color-variables, map_get($text-inputs-colors-support-parser, focus-border-color));
-        }
+    @include class-text-inputs-disabled-style('#{$colors-class-prefix}-#{$palette-color-prefix}') {
+        @include include-text-inputs-colors(parse-map($text-inputs-disabled-colors-support-parser, $palette-color-variables));
     }
 
     .#{$colors-class-prefix}-#{$palette-color-prefix} datalist,
     datalist.#{$colors-class-prefix}-#{$palette-color-prefix} {
-        border-color: map_get($palette-color-variables, map_get($text-inputs-datalist-colors-support-parser, border-color));
+        @include include-datalist-colors(parse-map($text-inputs-datalist-colors-support-parser, $palette-color-variables));
     }
 }
